@@ -36,7 +36,7 @@ target_link_libraries(helloworld_cli PRIVATE
     helloworld
 )
 target_link_libraries(test_version
-   googletest
+   gtest gtest_main
    helloworld
 )
 
