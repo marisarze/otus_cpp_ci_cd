@@ -71,4 +71,4 @@ set(CPACK_PACKAGE_CONTACT example@example.com)
 
 include(CPack)
 
-#add_test(test_version test_version)
+add_test(test_name test_version)
