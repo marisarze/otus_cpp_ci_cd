@@ -18,8 +18,8 @@ jobs:
       - run: cmake --build .
       - run: cmake --build . --target helloworld
       - run: cmake --build . --target helloworld_cli
-      - run: build/test_version.exe
-      - run: cpack
+      - run: cd build && ./test_version.exe
+      - run: cd .. && cpack
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
