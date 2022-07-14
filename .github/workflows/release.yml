@@ -19,7 +19,7 @@ jobs:
       - run: cmake --build . --target helloworld
       - run: cmake --build . --target helloworld_cli
       - run: ls -aq
-      - run: ./test_version.exe
+      - run: ./test_version
       - run: cpack
       - name: Create Release
         id: create_release
