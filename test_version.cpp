@@ -4,7 +4,7 @@
 
 
 TEST(TestSimple, TestVersion){
-    auto result = version();
+    auto result = version()+1;
     auto expected = PROJECT_VERSION_PATCH;
-    ASSERT_EQ(result, expected);
+    EXPECT_EQ(result, expected);
 }
