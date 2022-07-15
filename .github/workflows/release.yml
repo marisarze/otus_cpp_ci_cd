@@ -41,14 +41,14 @@ jobs:
           asset_name: helloworld-0.0.${{ github.run_number }}-Linux.deb
           asset_content_type: application/vnd.debian.binary-package
   
-  build_on_windows:
-    runs-on: windows-latest
-    steps:
-      - uses: actions/checkout@v2
-        with:
-          submodules: true
-      - run: cmake . -DPATCH_VERSION=${{ github.run_number }}
-      - run: cmake --build .
-      - run: cmake --build . --target helloworld
-      - run: cmake --build . --target helloworld_cli
-      - run: start test_version.exe
+  # build_on_windows:
+  #   runs-on: windows-latest
+  #   steps:
+  #     - uses: actions/checkout@v2
+  #       with:
+  #         submodules: true
+  #     - run: cmake . -DPATCH_VERSION=${{ github.run_number }}
+  #     - run: cmake --build .
+  #     - run: cmake --build . --target helloworld
+  #     - run: cmake --build . --target helloworld_cli
+  #     - run: start test_version.exe
