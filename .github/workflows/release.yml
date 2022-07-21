@@ -52,4 +52,5 @@ jobs:
       - run: cmake --build . --target helloworld
       - run: cmake --build . --target helloworld_cli
       - run: dir
+      - run: dir bin
       - run: ./test_version.exe
