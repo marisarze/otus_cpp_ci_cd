@@ -5,7 +5,7 @@ set(PROJECT_VESRION 0.0.${PATCH_VERSION})
 
 project(helloworld VERSION ${PROJECT_VESRION})
 
-set(INSTALL_GTEST OFF)
+
 include(FetchContent)
 FetchContent_Declare(
         googletest
@@ -13,6 +13,7 @@ FetchContent_Declare(
 )
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
+set(INSTALL_GTEST OFF)
 
 configure_file(version.h.in version.h)
 
@@ -64,7 +65,6 @@ endif()
 
 
 install(TARGETS helloworld_cli RUNTIME DESTINATION bin)
-add_subdirectory(googletest EXCLUDE_FROM_ALL)
 set(CPACK_GENERATOR DEB)
 
 set(CPACK_PACKAGE_VERSION_MAJOR "${PROJECT_VERSION_MAJOR}")
