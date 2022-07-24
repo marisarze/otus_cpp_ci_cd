@@ -5,8 +5,8 @@ set(PROJECT_VESRION 0.0.${PATCH_VERSION})
 
 project(helloworld VERSION ${PROJECT_VESRION})
 
-option(INSTALL_GMOCK "Install Googletest's GMock?" OFF)
-option(INSTALL_GTEST "Install Googletest's GTest?" OFF)
+# option(INSTALL_GMOCK "Install Googletest's GMock?" OFF)
+# option(INSTALL_GTEST "Install Googletest's GTest?" OFF)
 set(INSTALL_Gtest OFF)
 include(FetchContent)
 FetchContent_Declare(
