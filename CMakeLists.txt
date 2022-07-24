@@ -5,6 +5,7 @@ set(PROJECT_VESRION 0.0.${PATCH_VERSION})
 
 project(helloworld VERSION ${PROJECT_VESRION})
 
+set(INSTALL_GTEST OFF)
 include(FetchContent)
 FetchContent_Declare(
         googletest
