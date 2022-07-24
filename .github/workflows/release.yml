@@ -4,20 +4,22 @@ on:
   push:
     branches:
       - master
-      - feature/github_actions
+      - dev
 
 jobs:
-  build:
+  build_on_ubuntu:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
         with:
           submodules: true
-      - run: sudo apt-get update && sudo apt-get install libboost-test-dev -y
+      - run: sudo apt-get update
       - run: cmake . -DPATCH_VERSION=${{ github.run_number }}
       - run: cmake --build .
-      - run: cmake --build . --target test
-      - run: cmake --build . --target package
+      - run: cmake --build . --target helloworld
+      - run: cmake --build . --target helloworld_cli
+      - run: ./test_version
+      - run: cpack
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
@@ -38,3 +40,15 @@ jobs:
           asset_path: ./helloworld-0.0.${{ github.run_number }}-Linux.deb
           asset_name: helloworld-0.0.${{ github.run_number }}-Linux.deb
           asset_content_type: application/vnd.debian.binary-package
+  
+  build_on_windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: true
+      - run: cmake . -DPATCH_VERSION=${{ github.run_number }}
+      - run: cmake --build .
+      - run: cmake --build . --target helloworld
+      - run: cmake --build . --target helloworld_cli
+      - run: start Debug/test_version.exe
