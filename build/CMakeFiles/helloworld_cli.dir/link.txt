@@ -1,3 +1,0 @@
-"C:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\helloworld_cli.dir/objects.a
-C:\msys64\mingw64\bin\ar.exe qc CMakeFiles\helloworld_cli.dir/objects.a @CMakeFiles\helloworld_cli.dir\objects1.rsp
-C:\msys64\mingw64\bin\g++.exe -g -Wl,--whole-archive CMakeFiles\helloworld_cli.dir/objects.a -Wl,--no-whole-archive -o helloworld_cli.exe -Wl,--out-implib,libhelloworld_cli.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\helloworld_cli.dir\linklibs.rsp
