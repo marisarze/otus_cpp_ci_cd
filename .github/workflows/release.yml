@@ -15,8 +15,8 @@ jobs:
           submodules: true
       - run: sudo apt-get update
       - run: cmake . -DPATCH_VERSION=${{ github.run_number }}
-      - run: cmake --build . --target helloworld -DDISABLE_TESTS=ON
-      - run: cmake --build . --target helloworld_cli -DDISABLE_TESTS=ON
+      - run: cmake --build . --target helloworld
+      - run: cmake --build . --target helloworld_cli 
       - run: cmake --build . --target test_version
       - run: ./test_version
       - run: cpack
