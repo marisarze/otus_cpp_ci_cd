@@ -3,7 +3,7 @@ name: 'C++ CI'
 on:
   push:
     branches:
-      - master
+      - main
       - dev
 
 jobs:
@@ -20,6 +20,7 @@ jobs:
       - run: cmake --build . --target helloworld_cli
       - run: ./test_version
       - run: cpack
+      - run: dpkg -c helloworld-0.0.${{ github.run_number }}-Linux.deb
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
